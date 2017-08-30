@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Form</title>
+	<link rel="stylesheet" type="text/css" href="form.css" />
+
+</head>
+
+<body>
+	<div class="border">
+		<div class="outer">
+			<fieldset>
+				<legend><b>Profile</b></legend><br>
+				<form>
+					<label for="username"><b>Username</b></label><br>
+					<input class="box" type="text" name="Username" placeholder="Username" id="username"><br><br>
+
+					<label for="firstname"><b>Name</b></label><br>
+					<input class="box" type="text" name="firstname" placeholder="Firstname" id="firstname"> <input class="box" type="text"
+					    name="lastname" placeholder="Lastname" id="lastname"><br><br>
+
+					<label for="email"><b>Email</b></label><br>
+					<input class="box" type="text/number" name="email" placeholder="Email" id="email"> @
+					<select class="box">	
+				<option>gmail.com</option>
+				<option>yahoo.com</option>
+				<option>outlook.com</option>
+				<option>hotmail.com</option>
+			</select>
+					<br><br>
+
+					<label for="phone"><b>Phone</b></label><br>
+					<input class="box" type="number" name="phone" placeholder="Phone" id="phone"><br><br>
+
+					<label><b>Gender</b></label><br>
+					<label for="male">Male</label>
+					<input class="mal" type="radio" name="gender" value="male" id="male">
+					<label class="f" for="female">Female</label>
+					<input class="fem" type="radio" name="gender" value="female" id="female">
+					<br><br>
+
+					<label for="skills"><b>Skills</b></label><br>
+					<input class="s1" type="checkbox" name="skills" value="c" id="c">C
+					<input class="s2" type="checkbox" name="skills" value="c++" id="c++">C++
+					<input class="s3" type="checkbox" name="skills" value="python" id="python">Python<br>
+					<input class="s4" type="checkbox" name="skills" value="java" id="java">Java
+					<input class="s5" type="checkbox" name="skills" value="perl" id="perl">Perl
+					<input class="s6" type="checkbox" name="skills" value="js" id="js">Java Script
+					<br><br>
+
+				</form>
+
+			</fieldset>
+		</div>
+		<br><br>
+		<div class="outer">
+			<fieldset>
+				<legend><b>Communication Address</b></legend><br>
+				<form>
+					<label for="door"><b>Door No</b></label><br>
+					<input class="box" type="text/number" name="door" placeholder="Door Number" id="door"><br><br>
+
+					<label for="city"><b>City</b></label><br>
+					<input class="box" type="text" name="city" placeholder="City" id="city"><br><br>
+
+					<label for="state"><b>State</b></label><br>
+					<input class="box" type="text" name="state" placeholder="State" id="state"><br><br>
+
+					<label for="country"><b>Country</b></label><br>
+					<input class="box" type="text" name="country" placeholder="Country" id="country"><br><br>
+
+					<label for="pincode"><b>Pincode</b></label><br>
+					<input class="box" type="number" name="pincode" placeholder="Pincode" id="pincode"><br><br>
+
+				</form>
+			</fieldset>
+		</div>
+		<br>
+		<div class="check">
+			<input class="box" type="checkbox" name="choice" id="choice"><b>Same for original address</b>
+		</div>
+		<br>
+		<div class="outer">
+			<fieldset>
+				<legend><b>Original Address</b></legend><br>
+				<form>
+					<label for="door"><b>Door No</b></label><br>
+					<input class="box" type="text/number" name="door" placeholder="Door Number" id="door"><br><br>
+
+					<label for="city"><b>City</b></label><br>
+					<input class="box" type="text" name="city" placeholder="City" id="city"><br><br>
+
+					<label for="state"><b>State</b></label><br>
+					<input class="box" type="text" name="state" placeholder="State" id="state"><br><br>
+
+					<label for="country"><b>Country</b></label><br>
+					<input class="box" type="text" name="country" placeholder="Country" id="country"><br><br>
+
+					<label for="pincode"><b>Pincode</b></label><br>
+					<input class="box" type="number" name="pincode" placeholder="Pincode" id="pincode"><br><br>
+
+				</form>
+			</fieldset>
+		</div>
+		<br>
+		<input class="button" type="button" name="submit" id="submit" value="Submit">
+	</div>
+</body>
+
+</html>

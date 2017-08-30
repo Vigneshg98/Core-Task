@@ -1,0 +1,88 @@
+body {
+    background-image: url("wall.jpg");
+    color:#000000;
+    font-size: 18px;
+}
+
+.border {
+    width: 410px;
+    margin: 0px auto 0px auto;
+}
+
+.outer{
+    background-color: rgba(207, 196, 196, 0.63);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.box {
+    padding: 4px;
+    border-radius: 2px;
+    background-color: inherit;
+}
+
+.box:hover{
+    border-color: red;
+}
+
+::placeholder{
+	color: #000000;
+	font-size: 12px;
+	text-align: center;
+}
+
+.check{
+    color:red;
+}
+
+legend{
+    color:black;
+    font-size: 20px;
+}
+
+#male,#female{
+    border-radius: 4px;
+}
+
+#male,#female :hover{
+    border-color:red;
+}
+
+.button {
+    background-image:url("wall.jpg");
+    padding: 0.5%;
+    font-family: default;
+    cursor: pointer;
+    border: 2px solid white;
+    color:red;
+    padding:3px;
+    margin-left:45%;
+}
+
+.button:hover {
+    background-color: orange;
+}
+
+.s1{
+    margin-left:1%;
+}
+.s2{
+    margin-left:10%;
+}
+.s3{
+    margin-left:10%;
+}
+.s4{
+    margin-left:1%;
+}
+.s5{
+    margin-left:4.5%;
+}
+.s6{
+    margin-left:11%;
+}
+.f {
+    margin-left:4%;
+}
