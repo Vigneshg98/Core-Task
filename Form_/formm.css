@@ -5,7 +5,7 @@ body{
 .outer {
     width: 460px;
     margin: 10px auto;
-    background: #ecf0f1;
+    background: linear-gradient(to right,rgb(159, 164, 169), #ADECD5);
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     font-size: 14px;
@@ -20,6 +20,7 @@ fieldset {
 
 legend {
     color: #2c3e50;
+    font:bold;
 }
 
 .inner {
@@ -92,7 +93,7 @@ select:hover {
     display: block;
     width: 100px;
     border: 2px solid rgba(82, 181, 246, 0.56);
-    background: rgba(82, 181, 246, 0.56);
+    background:linear-gradient(to right,rgb(51, 126, 211), #7DF176);
     color: #010000;
     padding: 10px 5px;
     font-size: 14px;
@@ -141,13 +142,13 @@ select:hover {
 }
 
 .radio-btn:hover>input[type=radio]+.icon {
-    border-color: rgba(82, 181, 246, 0.56);
+    border-color: rgba(30, 93, 135, 0.56);
 }
 
 .radio-btn>input[type=radio]:checked+.icon {
-    border-color: rgba(82, 181, 246, 0.56);
+    border-color: rgba(30, 93, 135, 0.56);
 }
 
 .radio-btn>input[type=radio]:checked+.icon>.filled {
-    background-color: rgba(82, 181, 246, 0.56);
+    background-color: rgba(30, 93, 135, 0.56);
 }
