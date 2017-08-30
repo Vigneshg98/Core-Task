@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="formm.css" rel="stylesheet">
+</head>
+
+<body>
+    <form class="outer">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <div class="inner">
+                <label for="username">Username</label>
+                <input type="text" class="full" name="username" id="username" placeholder="Username" />
+            </div>
+            <div class="inner">
+                <label for="password">Password</label>
+                <input type="password" class="full" name="password" id="password" placeholder="Password" />
+            </div>
+            <div class="inner">
+                <label>Name</label>
+                <input type="text" class="half" name="firstname" id="firstname" placeholder="First Name" />
+                <input type="text" class="half" name="lastname" id="lastname" placeholder="Last Name" />
+            </div>
+            <div class="inner">
+                <label>Email Id</label>
+                <input type="text" class="dropbox" name="email" id="email" placeholder="Email" />
+                <select name="emailType" class="quaterwidth">
+                    <option selected>-- Select --</option>
+                    <option value="@gmail.com">@gmail.com</option>
+                    <option value="@hotmail.com">@hotmail.com</option>
+                    <option value="@yahoo.com">@yahoo.com</option>
+                    <option value="@outlook.com">@outlook.com</option>
+                </select>
+            </div>
+            <div class="inner">
+                <div class="half">
+                    <label>Phone No</label>
+                    <input type="text" name="phone" id="phone" placeholder="Phone" />
+                </div>
+                <div class="half">
+                    <label>Gender</label>
+                    <label class="sameline radio-btn">
+                        <input type="radio" name="gender" value="Male"/>
+                        <span class="icon">
+                                <span class="filled"></span>
+                        </span>
+                        <span class="text">Male</span>
+                    </label>
+                    <label class="sameline radio-btn">
+                        <input type="radio" name="gender" value="Female"/>
+                        <span class="icon">
+                            <span class="filled"></span>
+                        </span>
+                        <span class="text">Female</span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Communication Address</legend>
+            <div class="inner">
+                <label for="commdoorno">Door No</label>
+                <input type="text" class="full" name="commdoorno" id="commdoorno" placeholder="Door No" />
+            </div>
+            <div class="inner">
+                <label for="commstreet">Street Name</label>
+                <input type="text" class="full" name="commstreet" id="commstreet" placeholder="Street Name" />
+            </div>
+            <div class="inner">
+                <label for="commlocation">Location</label>
+                <input type="text" class="full" name="commlocation" id="commlocation" placeholder="Location" />
+            </div>
+            <div class="inner">
+                <label for="commcity">City</label>
+                <input type="text" class="full" name="commcity" id="commcity" placeholder="City" />
+            </div>
+            <div class="inner">
+                <label for="commstate">State</label>
+                <input type="text" class="full" name="commstate" id="commstate" placeholder="State" />
+            </div>
+            <div class="inner">
+                <label for="commpin">Pincode</label>
+                <input type="text" class="full" name="commpin" id="commpin" placeholder="Pincode" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Permanent Address</legend>
+            <div class="inner">
+                <label for="permdoorno">Door No</label>
+                <input type="text" class="full" name="permdoorno" id="permdoorno" placeholder="Door No" />
+            </div>
+            <div class="inner">
+                <label for="permstreet">Street Name</label>
+                <input type="text" class="full" name="permstreet" id="permstreet" placeholder="Street Name" />
+            </div>
+            <div class="inner">
+                <label for="permlocation">Location</label>
+                <input type="text" class="full" name="permlocation" id="permlocation" placeholder="Location" />
+            </div>
+            <div class="inner">
+                <label for="permcity">City</label>
+                <input type="text" class="full" name="permcity" id="permcity" placeholder="City" />
+            </div>
+            <div class="inner">
+                <label for="permstate">State</label>
+                <input type="text" class="full" name="permstate" id="permstate" placeholder="State" />
+            </div>
+            <div class="inner">
+                <label for="permpin">Pincode</label>
+                <input type="text" class="full" name="permpin" id="permpin" placeholder="Pincode" />
+            </div>
+        </fieldset>
+        <input type="submit" class="btn" value="Submit" />
+    </form>
+</body>
+
+</html>
