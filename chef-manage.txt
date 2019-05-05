@@ -1,0 +1,32 @@
+navigate to chef-repo through cmd
+
+knife client list // view client
+knife cookbook list // view cookbook
+knife cookbook upload workstation // upload cookbook
+
+
+cd chef-repo
+
+vagrant up
+vagrant status
+vagrant ssh-config
+
+knife bootstrap localhost --ssh-port PORT --ssh-user vagrant --sudo --identity-file /PATH/TO/KEY -N web1
+knife node list
+knife node show web1
+knife node run_list add web1 "recipe[workstation],recipe[apache]"
+knife node show web1
+vagrant ssh web1
+
+# run these commands on the web1 vagrant instance
+
+vagrant@web1$ sudo chef-client
+vagrant@web1$ curl localhost
+
+
+
+knife bootstrap localhost --ssh-port 22 --ssh-user vagrant --sudo --identity-file C:/Users/Vignesh/.vagrant.d/insecure_private_key -N web1
+
+knife bootstrap localhost --ssh-port 22 --ssh-user vagrant --sudo --identity-file C:/Users/Vignesh/.vagrant.d/insecure_private_key -N web2
+
+knife bootstrap localhost --ssh-port 2222 --ssh-user vagrant --sudo --identity-file C:/chef-repo/.vagrant/machines/load-balancer/virtualbox/private_key -N load-balancer

@@ -1,0 +1,194 @@
+# Configuring Your Development Environment - Vagrant and VirtualBox
+# run these commands to ensure you're setup properly.
+# Run these commands on your local machine
+
+chef --version
+chef -v
+vboxmanage --version
+vagrant --version
+
+---------------------------------
+mkdir chef-projects
+cd chef-projects/
+
+mkdir chef-prj-sample
+cd chef-prj-sample/
+----------------------------------
+Download centos-7.2 box from http://www.vagrantbox.es/
+place it in C:\DevOps\vagrant\centos7\  (create the directories if it doesnot exist)
+
+cd C:\DevOps\vagrant\centos7\
+vagrant box add vagrant-centos-7.2.box --name centos7 --provider=virtualbox
+
+Goto cd C:\DevOps\chef-projects\chef-prj-sample\
+
+vagrant init centos7
+
+vagrant up
+vagrant status
+vagrant ssh-config
+vagrant ssh
+
+
+# Run these commands on the vagrant instance after running 'vagrant ssh'
+vagrant@localhost$ curl --insecure https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 3.7.23
+vagrant@localhost$ chef --version
+
+(optional text editors)
+vagrant@localhost$ sudo yum install nano -y
+vagrant@localhost$ sudo yum install vim -y
+
+vagrant@localhost$ exit
+
+
+# when you're done with the exercises for the moment, suspend the machine state
+vagrant suspend
+
+
+
+[create and run]
+================
+
+
+[vagrant@localhost ~]$ vim hello.rb
+
+// press i to insert
+
+file "hello.txt" do
+content 'hello world'
+end
+
+ctrl+o
+:wq
+
+[vagrant@localhost ~]$ sudo chef-client -z hello.rb
+
+
+
+[vagrant@localhost ~]$ vim setup.rb
+
+package 'tree' do
+action :install
+end
+package 'ntp' do
+action :install
+end
+file '/etc/motd' do
+content 'Property of ....'
+owner 'root'
+group 'root'
+end
+
+ctrl+o
+:wq
+
+[vagrant@localhost ~]$ sudo chef-client -z setup.rb
+
+
+
+[cookbook]
+===========
+
+[vagrant@localhost ~]$ mkdir cookbooks
+
+chef --help
+chef generate --help
+
+[vagrant@localhost ~]$ chef generate cookbook cookbooks/workstation
+// chef [command] [arguments] [options]
+
+to move a recipe to directory
+[vagrant@localhost ~]$ mv setup.rb cookbooks/workstation/recipes
+
+
+==========
+installing a version control
+
+goto cd cookbooks/workstation/recipes
+vim setup.rb
+
+package 'git' do
+action :install
+end
+
+
+cd cookbooks/workstation
+
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Vigneshg98/cookbooks.git
+git push -u origin master
+
+=========================
+multiple cookbooks
+
+[vagrant@localhost ~]$ chef generate cookbook cookbooks/apache
+chef generate recipe cookbooks/apache server
+
+cd cookbooks/apache/recipes
+vim server.rb
+
+package 'httpd'
+file '/var/www/html/index.html' do
+content '<h1>Hello World</h1>'
+end
+service 'httpd' do
+action [:enable, :start]
+end
+
+sude chef-client -z server.rb
+
+==============================
+
+curl localhost
+
+
+[runlist]
+=============
+
+sudo chef-client --local-mode -r "recipe[workstation::setup]"
+sudo chef-client --local-mode -r "recipe[apache::server]"
+
+sudo chef-client --local-mode -r "recipe[workstation::setup],recipe[apache::server]"
+
+====================
+
+go to cookbooks/workstation/recipes
+
+vim default.rb
+
+include_recipe [workstation::setup]
+sudo chef-client --local-mode -r "recipe[workstation]"
+..........
+
+ some useful data
+
+ hostname
+ cat /proc/meminfo
+
+ ohai hostname
+ ohai ipaddress
+ ohai memory
+ ohai memory/total
+ ohai cpu
+ ohai cpu/0
+ ohai cpu/0/mhz
+
+========================
+
+ In a recipe we can get the ipaddress hostname
+
+ file 'etc/motd' do
+ content "Property of ...
+ IPADDRESS: #{node['ipaddress']}
+ HOSTNAME: #{node['hostname']}
+ MEMORY: #{node['memory']['total']}
+ CPU: #{node['cpu']['0']['mhz']}
+ "
+ node '0644'
+ owner 'root'
+ group 'root'
+ end
+
+ 
