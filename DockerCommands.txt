@@ -1,0 +1,22 @@
+// inside Dockerfile
+
+FROM rossbachp/java8
+FROM rossbachp/tomcat8
+
+COPY /target/payslip-0.0.1.war /opt/tomcat/webapps/
+
+=====================
+$docker-machine create <machine name> --driver virtualbox
+$docker-machine ls
+$ docker-machine env <machine name>
+$ docker-machine.exe env --shell cmd <machine name>
+$ eval "$(docker-machine env <machine name>)"
+$docker build –t <image name> <dockerfile location>
+$ docker run -d -p 8080:8080 <image name>
+$ curl $(docker-machine ip mydocks):8080/payslip-0.0.1.
+
+Check Process list
+$ docker ps -a
+
+Check tomcat dirs
+$ docker exec -it <container id> bash
