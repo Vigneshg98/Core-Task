@@ -13,7 +13,7 @@ $ docker-machine.exe env --shell cmd <machine name>
 $ eval "$(docker-machine env <machine name>)"
 $docker build –t <image name> <dockerfile location>
 $ docker run -d -p 8080:8080 <image name>
-$ curl $(docker-machine ip mydocks):8080/payslip-0.0.1.
+$ curl $(docker-machine ip mydocks):8080
 
 Check Process list
 $ docker ps -a
